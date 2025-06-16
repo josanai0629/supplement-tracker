@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from 'recharts'
 import { format } from 'date-fns'
 import { ja } from 'date-fns/locale'
-import { TrendingUp, TrendingDown, Star, MessageCircle, Yen, Trophy } from 'lucide-react'
+import { TrendingUp, TrendingDown, Star, MessageCircle, DollarSign, Trophy } from 'lucide-react'
 import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(
@@ -183,7 +183,7 @@ const ProductDashboard: React.FC = () => {
                     change={getChange(latestData.price, productData[productData.length - 2].price)}
                     trend={latestData.price > productData[productData.length - 2].price ? 'up' : 
                            latestData.price < productData[productData.length - 2].price ? 'down' : 'neutral'}
-                    icon={<Yen className="w-6 h-6 text-white" />}
+                    icon={<DollarSign className="w-6 h-6 text-white" />}
                     color="bg-green-500"
                   />
                   <StatCard
