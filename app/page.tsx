@@ -21,6 +21,7 @@ interface ProductData {
   rank: number
   scraped_at: string
   platform: string
+  url?: string
 }
 
 interface ChartData {
@@ -109,8 +110,8 @@ const ProductDashboard: React.FC = () => {
     return current > previous ? <TrendingUp className="w-4 h-4" /> : current < previous ? <TrendingDown className="w-4 h-4" /> : null
   }
 
-  const getChange = (current: number, previous: number) => {
-    if (previous === 0) return 0
+  const getChange = (current: number, previous: number): string => {
+    if (previous === 0) return '0.0'
     return ((current - previous) / previous * 100).toFixed(1)
   }
 
