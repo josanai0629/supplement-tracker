@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.recharts-tooltip-content {
+  background: white !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.recharts-tooltip-label {
+  color: #374151 !important;
+  font-weight: 600 !important;
+}
+
+.recharts-tooltip-item {
+  color: #374151 !important;
+}
